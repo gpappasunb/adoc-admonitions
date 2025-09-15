@@ -291,9 +291,9 @@ function Meta(metadata)
 	-- ADMONITIONS is a global variable in this extension
 	ADMONITIONS = merge_metadata(ADMONITIONS, metadata)
 	-- Intercepts the special config key
-	local data = metadata[FILTERNAME]["config"] or nil
+	local data = metadata[FILTERNAME] -- ["config"] or nil
 	if data then
-		local data_table = metamap_to_luatable(data)
+		local data_table = data.config and metamap_to_luatable(data)
 		CONFIG = merge_tables(CONFIG, data_table)
 	end
 	-- Return metadata
