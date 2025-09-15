@@ -65,19 +65,21 @@ the syntax is:
   the TOKEN, without spaces!
 - ":" ending of the token pattern.
 
-  NOTE|note title|: note text
+<!-- -->
 
-  is changed to:
+    NOTE|note title|: note text
 
-  ::: {.admonitionnote title="note title"}
-  note text
-  :::
+is changed to:
+
+    ::: {.admonitionnote title="note title"}
+    note text
+    :::
 
 Without the title specification:
 
     NOTE: note text
 
-    is changed to:
+is changed to:
 
     ::: {.admonitionnote}
     note text
@@ -110,9 +112,9 @@ With that in place, the line:
 
 is transformed to:
 
-::: admonitionnote
-xxx enclosed in a admonitionnote Div
-:::
+    ::: admonitionnote
+    xxx enclosed in a admonitionnote Div
+    :::
 
 ### Changing the matching patterns
 
