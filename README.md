@@ -91,17 +91,17 @@ is changed to:
 ### Altering/adding Token classes
 
 It is possible to alter the class names associated with the tokens by modifying the
-document metadata using the name of the filter (adoc-admonition)
+document metadata using the name of the filter (adoc-admonitions)
 
     ---
-    adoc-admonition:
+    adoc-admonitions:
         NOTE: mynoteclass
         TIP: mytipclass
 
 It is also possible to include new tokens:
 
     ---
-    adoc-admonition:
+    adoc-admonitions:
         xxx: admonitionnote
         TIP: TIPADMONITION
 
@@ -123,7 +123,7 @@ It is also possible to change the token matching regular expression by using a s
 metadata entry for the extension. The default configuration is:
 
     ---
-    adoc-admonition:
+    adoc-admonitions:
     config:
       left: ""
       right: ":"
@@ -132,7 +132,7 @@ metadata entry for the extension. The default configuration is:
 You can change the values with:
 
     ---
-    adoc-admonition:
+    adoc-admonitions:
         TIP: TIPADMONITION
     config:
       left: ">"
@@ -143,9 +143,37 @@ In the case above, the new token syntax should be:
 
     >IMPORTANT*title*< text of div
 
-## Usage in pandoc
 
-    pandoc -s test.md  -t beamer --lua-filter adoc-admonitions.lua
+## Installation and execution
+
+### Pandoc
+
+Save the file `adoc-admonitions` to `~/.pandoc/filters` (default directory for
+pandoc filters) or any other directory. Run using one of the following
+syntaxes:
+
+``` bash
+pandoc -s test.md -t html -L adoc-admonitions.lua
+pandoc -s test.md -t html --lua-filter=adoc-admonitions.lua
+pandoc -s test.md -t html -L ~/myfilters/adoc-admonitions.lua
+```
+
+The last alternative refers to the filter installed in a custom
+location.
+
+### Quarto
+
+    quarto install extension gpappasunb/adoc-admonitions
+
+Add the filter to the document metadata:
+
+``` markdown
+---
+filters:
+  - adoc-admonitions.lua
+---
+```
+
 
 ## Author
 
