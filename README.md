@@ -143,7 +143,6 @@ In the case above, the new token syntax should be:
 
     >IMPORTANT*title*< text of div
 
-
 ## Installation and execution
 
 ### Pandoc
@@ -152,7 +151,7 @@ Save the file `adoc-admonitions` to `~/.pandoc/filters` (default directory for
 pandoc filters) or any other directory. Run using one of the following
 syntaxes:
 
-``` bash
+```bash
 pandoc -s test.md -t html -L adoc-admonitions.lua
 pandoc -s test.md -t html --lua-filter=adoc-admonitions.lua
 pandoc -s test.md -t html -L ~/myfilters/adoc-admonitions.lua
@@ -167,13 +166,12 @@ location.
 
 Add the filter to the document metadata:
 
-``` markdown
+```markdown
 ---
 filters:
-  - adoc-admonitions.lua
+  - adoc-admonitions
 ---
 ```
-
 
 ## Author
 
