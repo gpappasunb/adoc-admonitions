@@ -14,13 +14,14 @@ colon (:) and a space. For example:
 
     NOTE: this is a note
 
-These are invalid:
+:no_entry: These are invalid :no_entry:
 
     NOTE:this  (no space after the colon)
 
        NOTE: this (not in the first column)
 
-**IMPORTANT**: This markup works with a single paragraph. Put all the content in a single line
+> [!IMPORTANT]
+> This markup works with a single paragraph. Put all the content in a single line
 
 ### Default admonitions
 
